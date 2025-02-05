@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Cookies company performance"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8678481f-4b73-455e-bcf5-72ebe8926467"
+  }
+}

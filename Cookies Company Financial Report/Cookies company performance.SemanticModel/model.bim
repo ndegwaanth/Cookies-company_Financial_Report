@@ -1,0 +1,791 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"List of countries and territories by total population\",\"Cookie Company Financials(Cookie Sales)\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.138.1452.0 (24.11)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "fastCombine": true,
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "f38a5f96-78c3-45c2-bbbe-fc6229c1c592",
+        "fromColumn": "Date",
+        "fromTable": "Cookie Company Financials(Cookie Sales)",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_69d9e61d-c3ff-4dc6-b487-d3dd02483972"
+      },
+      {
+        "name": "AutoDetected_a883a6d9-dfa4-4cff-87e2-3ea002ba25ab",
+        "fromColumn": "Population",
+        "fromTable": "Cookie Company Financials(Cookie Sales)",
+        "toColumn": "Population",
+        "toTable": "List of countries and territories by total population"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "List of countries and territories by total population",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Location",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a2fd8119-6e5c-4b92-a936-1097dab4c847",
+            "sourceColumn": "Location",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Population",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "65c0a4ee-2eb7-4950-8bd8-6a901c40ef1c",
+            "sourceColumn": "Population",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "90350a85-7bd4-48b4-9512-309a12dcab91",
+        "partitions": [
+          {
+            "name": "List of countries and territories by total population",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Web.BrowserContents(\"https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population\"),",
+                "    #\"Extracted Table From Html\" = Html.Table(Source, {{\"Column1\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7)\"}, {\"Column2\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TH:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6)\"}, {\"Column3\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TH:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TH:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5)\"}, {\"Column4\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TH:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TH:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TH:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4)\"}, {\"Column5\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TH:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TH:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TH:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TH:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(3)\"}, {\"Column6\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TH:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TH:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TH:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TH:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3) + TH:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(2), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(2), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(2), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(2)\"}, {\"Column7\", \"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TH:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TH:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TH:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TH:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TH:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3) + TH:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(2) + TH:not([colspan]):not([rowspan]):nth-child(7):nth-last-child(1), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(2) + TD:not([colspan]):not([rowspan]):nth-child(7):nth-last-child(1), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD[rowspan=\"\"2\"\"]:not([colspan]):nth-child(1):nth-last-child(7) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(2) + TD:not([colspan]):not([rowspan]):nth-child(7):nth-last-child(1), TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR > TD:not([colspan]):not([rowspan]):nth-child(1):nth-last-child(6) + TD:not([colspan]):not([rowspan]):nth-child(2):nth-last-child(5) + TD:not([colspan]):not([rowspan]):nth-child(3):nth-last-child(4) + TD:not([colspan]):not([rowspan]):nth-child(4):nth-last-child(3) + TD:not([colspan]):not([rowspan]):nth-child(5):nth-last-child(2) + TD:not([colspan]):not([rowspan]):nth-child(6):nth-last-child(1)\"}}, [RowSelector=\"TABLE.wikitable.sortable.sticky-header.sort-under.mw-datatable.col2left.col6left > * > TR\"]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Extracted Table From Html\", [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"\", type text}, {\"Location\", type text}, {\"Population\", Int64.Type}, {\"% ofworld\", Percentage.Type}, {\"Date\", type text}, {\"Source (official or fromthe United Nations)\", type text}, {\"Notes\", type text}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Location\", \"Population\"})",
+                "in",
+                "    #\"Removed Other Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Cookie Company Financials(Cookie Sales)",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Country",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "daa1f3c6-172d-492c-a3b4-8e7fc1761680",
+            "sourceColumn": "Country",
+            "summarizeBy": "none"
+          },
+          {
+            "name": " Product ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "befa79ba-c612-417f-a9cc-f34c96eab54f",
+            "sourceColumn": " Product ",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Units Sold",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8f2affe0-f5a8-4d3b-abe0-476ee1414fc2",
+            "sourceColumn": "Units Sold",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": " Revenue per cookie ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "3bc965aa-4dfd-4ecc-ad96-8faac122d028",
+            "sourceColumn": " Revenue per cookie ",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": " Cost per cookie ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "1de9614b-8cf7-4b7c-aacf-8626d810ec84",
+            "sourceColumn": " Cost per cookie ",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": " Revenue ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "9955ebc9-87cd-4179-8a7b-1e6906df3d0f",
+            "sourceColumn": " Revenue ",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": " Cost ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "ca5dd454-1252-4fb1-89f2-55ee4b91fcdd",
+            "sourceColumn": " Cost ",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": " Profit ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "dataType": "decimal",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "lineageTag": "758c36e7-fc4d-4d40-97d4-99057e6bf2fe",
+            "sourceColumn": " Profit ",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4937e4ae-eae1-4f0d-8a75-bcc4a5ab614d",
+            "sourceColumn": "Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_69d9e61d-c3ff-4dc6-b487-d3dd02483972"
+                },
+                "isDefault": true,
+                "relationship": "f38a5f96-78c3-45c2-bbbe-fc6229c1c592"
+              }
+            ]
+          },
+          {
+            "name": "Month Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "55d05e7e-36d0-4ee0-8a8a-48c4bc6b9a63",
+            "sourceColumn": "Month Number",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b72ce62b-3081-46e9-8f18-336383619fee",
+            "sourceColumn": "Month",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d2538ec1-e6da-4556-a61b-d9674bb762a1",
+            "sourceColumn": "Year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Population",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ac402e7a-208d-4472-bf33-594382e2a0b3",
+            "sourceColumn": "Population",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a8e5e3e2-a53f-4d00-ac03-d1075637c2cf",
+        "partitions": [
+          {
+            "name": "Cookie Company Financials(Cookie Sales)",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\ndegw\\all-code\\Data_visualizations\\Power_Bi\\Cookies Company Financial Report\\Cookie Company Financials(Cookie Sales).csv\"),[Delimiter=\",\", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Country\", type text}, {\" Product \", type text}, {\"Units Sold\", Int64.Type}, {\" Revenue per cookie \", Currency.Type}, {\" Cost per cookie \", Currency.Type}, {\" Revenue \", Currency.Type}, {\" Cost \", Currency.Type}, {\" Profit \", Currency.Type}, {\"Date\", type date}, {\"Month Number\", Int64.Type}, {\" Month Name \", type text}, {\"Year\", Int64.Type}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed Type\",{{\" Month Name \", \"Month\"}}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Renamed Columns\", {\"Country\"}, #\"List of countries and territories by total population\", {\"Location\"}, \"List of countries and territories by total population\", JoinKind.LeftOuter),",
+                "    #\"Expanded List of countries and territories by total population\" = Table.ExpandTableColumn(#\"Merged Queries\", \"List of countries and territories by total population\", {\"Population\"}, {\"List of countries and territories by total population.Population\"}),",
+                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Expanded List of countries and territories by total population\",{{\"List of countries and territories by total population.Population\", \"Population\"}})",
+                "in",
+                "    #\"Renamed Columns1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_7fa9446b-4a4b-4509-9a12-ecf120bf846f",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "6603e145-ca0b-4064-ba0a-584bad209b61",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "98bd2bcf-0f04-4a1b-873d-c58cf16b2938",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "481f7b4f-fec3-4a93-ad79-7d16fca4ee4a",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "c92ac582-baa2-4bfe-b6a2-74f168d133b7",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "618c9a19-638a-4b67-a35d-fdccdae810f2",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "f9a906fc-10f7-48e5-9ddb-89155b233fd0",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "f905461b-ec30-4a9d-a2ef-4a15e96c946f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "7467e6c7-e5b3-49b4-942f-269da5433c24",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "3e0e7f47-ee3a-4a35-b7ec-95506709eb58",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "c51b38ab-9b89-41fe-8fe8-a002575049ce",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "63443ffe-a5ab-42b6-bd12-9c42f04ab5f3",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "84ee5f28-d953-43fd-80da-d0f217887e41"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "9f9008a0-2128-40e4-9edc-68671f22277c",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_7fa9446b-4a4b-4509-9a12-ecf120bf846f",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_69d9e61d-c3ff-4dc6-b487-d3dd02483972",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "8146d641-a46e-47d7-b576-43acb0c56701",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "75db1f75-e8c3-45fb-8b53-e8ec6bbe6311",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "c3d17338-6649-487c-a7f2-e7a5573a404d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "7c094146-ccc9-41d1-965a-6fab8f06c4dd",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "5598ec8c-bd89-4430-a96e-e1de718bdb14",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "2d40cf6d-bf4b-48d8-9ac2-6aac6c28ade8",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "a18e7a56-8304-42c9-9858-c854363704d3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "530a5f6e-7fb3-49c8-a76a-5c7e4dad3535",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "bf88509c-ccf0-46ca-b7bb-b4698d98c92f",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "2e899cbc-f09b-4928-a0be-502b99344995",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "dc663fe6-fba1-469d-85bb-eefae683230c",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "6253de68-0a43-4bcf-84b1-882dd0d81fd7"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "fcc415ba-32ec-4ecd-8757-8e192025155a",
+        "partitions": [
+          {
+            "name": "LocalDateTable_69d9e61d-c3ff-4dc6-b487-d3dd02483972",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('Cookie Company Financials(Cookie Sales)'[Date])), 1, 1), Date(Year(MAX('Cookie Company Financials(Cookie Sales)'[Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      }
+    ]
+  }
+}

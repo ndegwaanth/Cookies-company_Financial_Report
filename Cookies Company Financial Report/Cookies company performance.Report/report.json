@@ -1,0 +1,129 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.60\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleCityPark\",\"version\":\"5.60\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleCityPark",
+            "path": "BuiltInThemes/AccessibleCityPark.json",
+            "type": 201
+          },
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "94f8f390d44216110670",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"141495960b8131a9378b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":957.4297188755021,\"y\":348.2730923694779,\"z\":7000,\"width\":322.570281124498,\"height\":208.19277108433735,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"kpi\",\"projections\":{\"Indicator\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue )\"}],\"TrendLine\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales).Country\"}],\"Goal\":[{\"queryRef\":\"CountNonNull(Cookie Company Financials(Cookie Sales).Date.Variation.Date Hierarchy.Year)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Revenue \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue )\",\"NativeReferenceName\":\"Sum of  Revenue \"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Country\"},\"Name\":\"Cookie Company Financials(Cookie Sales).Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"}},\"Function\":5},\"Name\":\"CountNonNull(Cookie Company Financials(Cookie Sales).Date.Variation.Date Hierarchy.Year)\",\"NativeReferenceName\":\"Count of Date Hierarchy Year\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 208.19,
+          "width": 322.57,
+          "x": 957.43,
+          "y": 348.27,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"1cf9cbb72b0740000386\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.281124497991968,\"y\":80.96385542168674,\"z\":0,\"width\":555.1807228915663,\"height\":199.19678714859438,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales).Date.Variation.Date Hierarchy.Month\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"Cookie Company Financials(Cookie Sales).Date.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"Date Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Profit \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\",\"NativeReferenceName\":\"Sum of  Profit \"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 199.20,
+          "width": 555.18,
+          "x": 10.28,
+          "y": 80.96,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"25d83f37d5a579998652\",\"layouts\":[{\"id\":0,\"position\":{\"x\":614.2971887550201,\"y\":96.3855421686747,\"z\":2000,\"width\":354.6987951807229,\"height\":194.0562248995984,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales).Country\"},{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales).Units Sold)\"},{\"queryRef\":\"List of countries and territories by total population.Population\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"List of countries and territories by total population\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Units Sold\"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales).Units Sold)\",\"NativeReferenceName\":\"Sum of Units Sold\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Country\"},\"Name\":\"Cookie Company Financials(Cookie Sales).Country\",\"NativeReferenceName\":\"Country\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Population\"},\"Name\":\"List of countries and territories by total population.Population\",\"NativeReferenceName\":\"Population\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 194.06,
+          "width": 354.70,
+          "x": 614.30,
+          "y": 96.39,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"7c689f9a1b4b00700922\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.281124497991968,\"y\":290.4417670682731,\"z\":1000,\"width\":555.1807228915663,\"height\":237.75100401606426,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Category\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales).Country\",\"active\":true}],\"Size\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\"}],\"Tooltips\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Country\"},\"Name\":\"Cookie Company Financials(Cookie Sales).Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Profit \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\",\"NativeReferenceName\":\"Sum of  Profit \"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 237.75,
+          "width": 555.18,
+          "x": 10.28,
+          "y": 290.44,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"a7877f0b4e810801e283\",\"layouts\":[{\"id\":0,\"position\":{\"x\":957,\"y\":538,\"width\":323,\"height\":181,\"z\":7001,\"tabOrder\":7001}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Profit \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\",\"NativeReferenceName\":\"Sum of  Profit \"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Profit \"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 181.00,
+          "width": 323.00,
+          "x": 957.00,
+          "y": 538.00,
+          "z": 7001.00
+        },
+        {
+          "config": "{\"name\":\"acf3de5e459c65c811d4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":538,\"width\":555,\"height\":182,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales). Product \",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Product \"},\"Name\":\"Cookie Company Financials(Cookie Sales). Product \",\"NativeReferenceName\":\" Product \"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Profit \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Profit )\",\"NativeReferenceName\":\"Sum of  Profit \"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Profit \"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 182.00,
+          "width": 555.00,
+          "x": 10.00,
+          "y": 538.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"bb2dacf5993ba5a69e25\",\"layouts\":[{\"id\":0,\"position\":{\"x\":592.4497991967871,\"y\":538.4738955823293,\"z\":5000,\"width\":362.4096385542169,\"height\":181.20481927710844,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue )\"},{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue )\"}],\"Category\":[{\"queryRef\":\"List of countries and territories by total population.Location\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"List of countries and territories by total population\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Revenue \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue )\",\"NativeReferenceName\":\"Sum of  Revenue \"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"Location\"},\"Name\":\"List of countries and territories by total population.Location\",\"NativeReferenceName\":\"Location\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Revenue \"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 181.20,
+          "width": 362.41,
+          "x": 592.45,
+          "y": 538.47,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"c6567fc033be8965901e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":957.4297188755021,\"y\":61.686746987951814,\"z\":6000,\"width\":322.570281124498,\"height\":286.58634538152614,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales).Country\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue per cookie )\"},{\"queryRef\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue per cookie )\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Country\"},\"Name\":\"Cookie Company Financials(Cookie Sales).Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Revenue per cookie \"}},\"Function\":0},\"Name\":\"Sum(Cookie Company Financials(Cookie Sales). Revenue per cookie )\",\"NativeReferenceName\":\"Sum of  Revenue per cookie \"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\" Revenue per cookie \"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 286.59,
+          "width": 322.57,
+          "x": 957.43,
+          "y": 61.69,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"eb3ea0f73218e17cb0a5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":580.8835341365462,\"y\":320,\"z\":4000,\"width\":176.06425702811245,\"height\":208.19277108433735,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Cookie Company Financials(Cookie Sales).Country\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"Cookie Company Financials(Cookie Sales)\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Country\"},\"Name\":\"Cookie Company Financials(Cookie Sales).Country\",\"NativeReferenceName\":\"Country\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 208.19,
+          "width": 176.06,
+          "x": 580.88,
+          "y": 320.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"f12e76dac05e0e15b060\",\"layouts\":[{\"id\":0,\"position\":{\"x\":224.8995983935743,\"y\":21.847389558232933,\"z\":7002,\"width\":769.7991967871486,\"height\":59.11646586345382,\"tabOrder\":7002}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"COOKIES COMPANY PERFOMANCE\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"28pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 59.12,
+          "width": 769.80,
+          "x": 224.90,
+          "y": 21.85,
+          "z": 7002.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "AccessibleCityPark"
+}
